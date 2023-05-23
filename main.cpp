@@ -1,4 +1,4 @@
-#include "valid_parentheses.h"
+#include "valid_palindrome.h"
 
 int main() {
 
