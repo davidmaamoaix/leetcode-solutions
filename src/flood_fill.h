@@ -10,6 +10,7 @@ public:
         int mask = image[sr][sc];
         int h = image.size(), w = image[0].size();
 
+        set<pair<int, int>> v;
         queue<pair<int, int>> q;
         q.push({sr, sc});
 
@@ -18,7 +19,8 @@ public:
             int r = curr.first, c = curr.second;
             q.pop();
             
-            if (image[r][c] != mask) continue;
+            if (image[r][c] != mask || v.find({r, c}) != v.end()) continue;
+            v.insert({r, c});
 
             image[r][c] = color;
             if (r > 0) q.push({r - 1, c});
